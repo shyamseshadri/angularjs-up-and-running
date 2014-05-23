@@ -1,0 +1,22 @@
+<!-- File: chapter2/controller-click-message.html -->
+<html ng-app="notesApp">
+<head><title>Notes App</title></head>
+<body ng-controller="MainCtrl as ctrl">
+  {{ctrl.message}} AngularJS.
+
+  <button ng-click="ctrl.changeMessage()">
+    Change Message
+  </button>
+  <script src="http://code.angularjs.org/1.2.16/angular.js"></script>
+  <script type="text/javascript">
+    angular.module('notesApp', [])
+         .controller('MainCtrl', [function() {
+              var self = this;
+              self.message= 'Hello ';
+              self.changeMessage = function() {
+                  self.message = 'Goodbye';
+              };
+        }]);
+  </script>
+</body>
+</html>
