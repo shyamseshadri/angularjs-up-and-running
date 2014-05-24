@@ -1,0 +1,33 @@
+<!-- File: chapter6/public/logging-interceptor.html -->
+<html ng-app="notesApp">
+
+<head>
+  <title>HTTP Interceptor Example</title>
+</head>
+
+<body ng-controller="MainCtrl as mainCtrl">
+  <h1>Hello Interceptors!</h1>
+  <div ng-repeat="todo in mainCtrl.items">
+    <div><span ng-bind="todo.label"></span></div>
+    <div>- by <span ng-bind="todo.author"></span></div>
+    <br/><br/>
+  </div>
+
+  <div>
+    <form name="addForm" ng-submit="mainCtrl.add()">
+      <input type="text"
+             placeholder="Label"
+             ng-model="mainCtrl.newTodo.label"
+             required>
+      <input type="text"
+             placeholder="Author"
+             ng-model="mainCtrl.newTodo.author"
+             required>
+      <input type="submit" value="Add" ng-disabled="addForm.$invalid">
+    </form>
+  </div>
+
+  <script src="http://code.angularjs.org/1.2.16/angular.js"></script>
+  <script src="logging-interceptor.js"></script>
+</body>
+</html>

@@ -1,0 +1,60 @@
+<!-- File: chapter6/public/http-post-example.html -->
+<html ng-app="notesApp">
+
+<head>
+  <title>HTTP Post Example</title>
+</head>
+
+<body ng-controller="MainCtrl as mainCtrl">
+  <h1>Hello Servers!</h1>
+  <div ng-repeat="todo in mainCtrl.items">
+    <div><span ng-bind="todo.label"></span></div>
+    <div>- by <span ng-bind="todo.author"></span></div>
+    <br/><br/>
+  </div>
+
+  <div>
+    <form name="addForm" ng-submit="mainCtrl.add()">
+      <input type="text"
+             placeholder="Label"
+             ng-model="mainCtrl.newTodo.label"
+             required>
+      <input type="text"
+             placeholder="Author"
+             ng-model="mainCtrl.newTodo.author"
+             required>
+      <input type="submit" value="Add" ng-disabled="addForm.$invalid">
+    </form>
+  </div>
+
+  <script src="http://code.angularjs.org/1.2.16/angular.js"></script>
+  <script>
+    angular.module('notesApp', [])
+      .controller('MainCtrl', ['$http', function($http) {
+        var self = this;
+        self.items = [];
+        self.newTodo = {};
+        var fetchTodos = function() {
+          return $http.get('/api/note').then(function(response) {
+            self.items = response.data;
+          }, function(errResponse) {
+            console.log('Error while fetching notes');
+          });
+        };
+
+        fetchTodos();
+
+        self.add = function() {
+          console.log('Adding self' +
+              ',', self.newTodo)
+          $http.post('/api/note', self.newTodo)
+              .then(fetchTodos)
+              .then(function(response) {
+                self.newTodo = {};
+              });
+        };
+
+      }]);
+  </script>
+</body>
+</html>

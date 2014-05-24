@@ -1,0 +1,27 @@
+<!-- File: chapter6/public/http-defaults.html -->
+<html ng-app="notesApp">
+<head>
+  <title>HTTP Default Example</title>
+</head>
+
+<body ng-controller="LoginCtrl as loginCtrl">
+<h1>Hello HTTP Defaults!</h1>
+<div>
+  <div ng-bind="loginCtrl.message"></div>
+  <form name="loginForm" ng-submit="loginCtrl.login()">
+    <input type="text"
+           placeholder="Username"
+           ng-model="loginCtrl.user.username"
+           required>
+    <input type="password"
+           placeholder="Password"
+           ng-model="loginCtrl.user.password"
+           required>
+    <input type="submit" value="Login" ng-disabled="loginForm.$invalid">
+  </form>
+</div>
+
+<script src="http://code.angularjs.org/1.2.16/angular.js"></script>
+<script src="http-defaults.js"></script>
+</body>
+</html>

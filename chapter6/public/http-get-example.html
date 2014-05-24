@@ -1,0 +1,30 @@
+<!-- File: chapter6/public/http-get-example.html -->
+<html ng-app="notesApp">
+
+<head>
+  <title>$http get example</title>
+</head>
+
+<body ng-controller="MainCtrl as mainCtrl">
+  <h1>Hello Servers!</h1>
+  <div ng-repeat="todo in mainCtrl.items">
+    <div><span ng-bind="todo.label"></span></div>
+    <div>- by <span ng-bind="todo.author"></span></div>
+    <br/><br/>
+  </div>
+
+  <script src="http://code.angularjs.org/1.2.16/angular.js"></script>
+  <script>
+    angular.module('notesApp', [])
+      .controller('MainCtrl', ['$http', function($http) {
+        var self = this;
+        self.items = [];
+        $http.get('/api/note').then(function(response) {
+          self.items = response.data;
+        }, function(errResponse) {
+          console.log('Error while fetching notes');
+        });
+      }]);
+  </script>
+</body>
+</html>
