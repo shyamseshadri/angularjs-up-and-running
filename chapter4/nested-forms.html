@@ -1,0 +1,57 @@
+<!-- File: chapter4/nested-forms.html -->
+<html ng-app>
+<head>
+  <title>Notes App</title>
+</head>
+
+<body>
+  <form novalidate name="myForm">
+    <input type="text"
+           class="username"
+           name="uname"
+           ng-model="ctrl.user.username"
+           required=""
+           placeholder="Username"
+           ng-minlength="4" />
+    <input type="password"
+           class="password"
+           name="pwd"
+           ng-model="ctrl.user.password"
+           placeholder="Password"
+           required="" />
+    <br/>
+
+    <ng-form name="profile">
+      <input type="text"
+             name="firstName"
+             ng-model="ctrl.user.profile.firstName"
+             placeholder="First Name"
+             required>
+      <input type="text"
+             name="middleName"
+             placeholder="Middle Name"
+             ng-model="ctrl.user.profile.middleName">
+      <input type="text"
+             name="lastName"
+             placeholder="Last Name"
+             ng-model="ctrl.user.profile.lastName"
+             required>
+      <input type="date"
+             name="dob"
+             placeholder="Date Of Birth"
+             ng-model="ctrl.user.profile.dob">
+    </ng-form>
+
+    <span ng-show="myForm.profile.$invalid">
+        Please fill out the profile information
+      </span>
+
+    <input type="submit"
+           value="Submit!!"
+           ng-disabled="myForm.$invalid"/>
+  </form>
+
+  <script src="http://code.angularjs.org/1.2.16/angular.js"></script>
+</body>
+
+</html>
