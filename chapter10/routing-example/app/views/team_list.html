@@ -1,0 +1,20 @@
+<!-- File: chapter10/routing-example/app/views/teams_list.html -->
+<div class="team-list-container">
+    <div class="team"
+         ng-repeat="team in teamListCtrl.teams | orderBy: 'rank'">
+         <div class="team-info row">
+             <div class="col-lg-1 rank">
+                  <span ng-bind="team.rank"></span>
+             </div>
+             <div class="col-sm-3">
+                 <img ng-src="{{team.flag_url}}" class="flag">
+             </div>
+             <div class="col-lg-6 name">
+                <a title="Image Courtesy: Wikipedia"
+                   ng-href="#/team/{{team.code}}"
+                   ng-bind="team.name"
+                   style="color: cadetblue;"></a>
+             </div>
+         </div>
+    </div>
+</div>
