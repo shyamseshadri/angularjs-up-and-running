@@ -1,0 +1,33 @@
+<!-- File: chapter14/appUnderTest/app/index.html -->
+<html>
+<head>
+    <title>FIFA Teams</title>
+    <link rel="stylesheet" href="styles/bootstrap.css">
+    <link rel="stylesheet" href="styles/main.css">
+</head>
+<body ng-app="fifaApp" class="landing">
+    <div class="top-bar"  ng-controller="MainCtrl as mainCtrl">
+        <div class="pull-left">
+            <span><a href="#/">FIFA TEAMS</a></span>
+        </div>
+        <div class="pull-right">
+            <span class="login-link" ng-hide="mainCtrl.userService.isLoggedIn">
+              <a href="#/login">Login</a>
+            </span>
+            <span class="logout-link" ng-show="mainCtrl.userService.isLoggedIn">
+              <a href="/api/logout">Logout</a>
+            </span>
+        </div>
+    </div>
+
+    <div ng-view></div>
+
+    <script src="scripts/vendors/jquery-1.11.1.js"></script>
+    <script src="scripts/vendors/angular.js"></script>
+    <script src="scripts/vendors/angular-route.js"></script>
+
+    <script src="scripts/app.js"></script>
+    <script src="scripts/services.js"></script>
+    <script src="scripts/controllers.js"></script>
+</body>
+</html>
