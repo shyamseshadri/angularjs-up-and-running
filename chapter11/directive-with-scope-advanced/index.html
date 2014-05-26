@@ -1,0 +1,23 @@
+<!-- File: chapter11/directive-with-scope-advanced/index.html -->
+<html>
+<head>
+  <title>Stock Market App</title>
+</head>
+<body ng-app="stockMarketApp">
+
+  <div ng-controller="MainCtrl as mainCtrl">
+    <h3>List of Stocks</h3>
+    <div ng-repeat="s in mainCtrl.stocks">
+      <div stock-widget
+           stock-data="s"
+           stock-title="Stock {{$index}}. {{s.name}}"
+           when-select="mainCtrl.onStockSelect(stockPrice, stockName)">
+      </div>
+    </div>
+  </div>
+
+  <script src="http://code.angularjs.org/1.2.16/angular.js"></script>
+  <script src="app.js"></script>
+  <script src="directive.js"></script>
+</body>
+</html>

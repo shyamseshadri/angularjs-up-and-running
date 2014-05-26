@@ -1,0 +1,19 @@
+<!-- File: chapter11/ng-include/index.html -->
+<html>
+<head>
+  <title>Stock Market App</title>
+</head>
+<body ng-app="stockMarketApp">
+
+  <div ng-controller="MainCtrl as mainCtrl">
+    <h3>List of Stocks</h3>
+    <div ng-repeat="stock in mainCtrl.stocks">
+      <div ng-include="mainCtrl.stockTemplate">
+      </div>
+    </div>
+  </div>
+
+  <script src="http://code.angularjs.org/1.2.16/angular.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
