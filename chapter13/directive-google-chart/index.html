@@ -1,0 +1,21 @@
+<!-- File: chapter13/directive-google-chart/index.html -->
+<html>
+<head>
+  <title>Google Chart App</title>
+</head>
+<body ng-app="googleChartApp">
+
+  <div ng-controller="MainCtrl as mainCtrl">
+    <div>
+      <button ng-click="mainCtrl.changeData()">Change Pie Chart Data</button>
+    </div>
+    <div pie-chart chart-data="mainCtrl.pieChartData" chart-config="mainCtrl.pieChartConfig"></div>
+  </div>
+
+  <script src="https://www.google.com/jsapi"></script>
+  <script src="http://code.angularjs.org/1.2.16/angular.js"></script>
+  <script src="app.js"></script>
+  <script src="googleChartLoader.js"></script>
+  <script src="pieChart.js"></script>
+</body>
+</html>

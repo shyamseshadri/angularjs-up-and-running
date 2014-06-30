@@ -1,0 +1,19 @@
+<!-- File: chapter13/directive-advanced-transclusion/index.html -->
+<html>
+<head>
+  <title>Stock Market App</title>
+</head>
+<body ng-app="stockMarketApp">
+
+  <div ng-controller="MainCtrl as mainCtrl">
+    <h3>List of Stocks</h3>
+    <div simple-stock-repeat="mainCtrl.stocks">
+      We found {{stock.name}} at {{currentIndex}}
+    </div>
+  </div>
+
+  <script src="angular.js"></script>
+  <script src="app.js"></script>
+  <script src="directive.js"></script>
+</body>
+</html>

@@ -1,0 +1,33 @@
+<!-- File: chapter13/directive-custom-validator/index.html -->
+<html>
+<head>
+  <title>Stock Market App</title>
+  <style>
+    input.ng-invalid {
+      background: pink;
+    }
+  </style>
+</head>
+<body ng-app="stockMarketApp">
+
+  <div ng-controller="MainCtrl as mainCtrl">
+    <h3>Zip Code Input</h3>
+    <h5>Zips are allowed in one of the following formats</h5>
+    <ul>
+      <li>12345</li>
+      <li>12345 1234</li>
+      <li>12345-1234</li>
+    </ul>
+    <form novalidate="">
+      Enter valid zip code: <input type="text"
+                                   ng-model="mainCtrl.zip"
+                                   valid-zip>
+
+    </form>
+  </div>
+
+  <script src="http://code.angularjs.org/1.2.16/angular.js"></script>
+  <script src="app.js"></script>
+  <script src="directive.js"></script>
+</body>
+</html>

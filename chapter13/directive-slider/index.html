@@ -1,0 +1,47 @@
+<!-- File: chapter13/directive-slider/index.html -->
+<html>
+<head>
+  <title>Stock Market App</title>
+  <link rel="stylesheet" href="jquery.nouislider.css">
+  <style type="text/css">
+    .slider {
+      display: block;
+      height: 20px;
+      margin: 20px;
+    }
+  </style>
+</head>
+<body ng-app="sliderApp">
+
+  <div ng-controller="MainCtrl as mainCtrl">
+
+    <div>
+      The current value of the slider is {{mainCtrl.selectedValue}}
+    </div>
+
+    <noui-slider class="slider"
+                 ng-model="mainCtrl.selectedValue"
+                 range-min="500"
+                 range-max="5000">
+
+    </noui-slider>
+
+    <div>
+      <input type="number"
+             ng-model="mainCtrl.textValue"
+             min="500"
+             max="5000"
+             placeholder="Set a value">
+      <button ng-click="mainCtrl.setSelectedValue()">
+        Set slider value
+      </button>
+    </div>
+  </div>
+
+  <script src="http://code.jquery.com/jquery-1.11.1.js"></script>
+  <script src="jquery.nouislider.min.js"></script>
+  <script src="http://code.angularjs.org/1.2.16/angular.js"></script>
+  <script src="app.js"></script>
+  <script src="noui-slider.js"></script>
+</body>
+</html>
