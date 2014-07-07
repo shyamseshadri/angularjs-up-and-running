@@ -17,6 +17,5 @@ angular.module('googleChartApp', [])
 
     self.changeData = function() {
       self.pieChartData[1].value = 25;
-      console.log('CHanged', self.pieChartData);
     };
   }]);
