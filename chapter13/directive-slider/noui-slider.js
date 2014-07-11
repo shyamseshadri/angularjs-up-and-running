@@ -1,6 +1,6 @@
 // File: chapter13/directive-slider/noui-slider.js
-angular.module('stockMarketApp')
-  .directive('sliderApp', [function() {
+angular.module('sliderApp')
+  .directive('nouiSlider', [function() {
     return {
       restrict: 'E',
       require: 'ngModel',
