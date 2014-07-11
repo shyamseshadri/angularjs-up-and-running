@@ -23,25 +23,27 @@
       </span>
   </div>
 
-  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.19/angular.js"></script>
-  <script type="text/javascript">
-    angular.module('notesApp', []).controller('MainCtrl', [
-      function() {
-        var self = this;
-        self.notes = [
-          {label: 'First Note', done: false, assignee: 'Shyam'},
-          {label: 'Second Note', done: false},
-          {label: 'Done Note', done: true},
-          {label: 'Last Note', done: false, assignee: 'Brad'}
-        ];
+<script
+  src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.19/angular.js">
+</script>
+<script type="text/javascript">
+  angular.module('notesApp', []).controller('MainCtrl', [
+    function() {
+      var self = this;
+      self.notes = [
+        {label: 'First Note', done: false, assignee: 'Shyam'},
+        {label: 'Second Note', done: false},
+        {label: 'Done Note', done: true},
+        {label: 'Last Note', done: false, assignee: 'Brad'}
+      ];
 
-        self.getNoteClass = function(status) {
-          return {
-              done: status,
-              pending: !status
-          };
+      self.getNoteClass = function(status) {
+        return {
+            done: status,
+            pending: !status
         };
-    }]);
-  </script>
+      };
+  }]);
+</script>
 </body>
 </html>

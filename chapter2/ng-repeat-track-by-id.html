@@ -19,29 +19,31 @@
     <span class="author" ng-bind="note.done"></span>
   </div>
 
-  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.19/angular.js"></script>
-  <script type="text/javascript">
-    angular.module('notesApp', [])
-      .controller('MainCtrl', [function() {
-        var self = this;
-        var notes = [
-          {id: 1, label: 'First Note', done: false, someRandom: 3143141},
+<script
+  src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.19/angular.js">
+</script>
+<script type="text/javascript">
+  angular.module('notesApp', [])
+    .controller('MainCtrl', [function() {
+      var self = this;
+      var notes = [
+        {id: 1, label: 'First Note', done: false, someRandom: 31431},
+        {id: 2, label: 'Second Note', done: false},
+        {id: 3, label: 'Finished Third Note', done: true}
+      ];
+      self.notes1 = angular.copy(notes);
+      self.notes2 = angular.copy(notes);
+      self.changeNotes = function() {
+        notes = [
+          {id: 1, label: 'Changed Note', done: false, someRandom: 4242},
           {id: 2, label: 'Second Note', done: false},
           {id: 3, label: 'Finished Third Note', done: true}
         ];
         self.notes1 = angular.copy(notes);
         self.notes2 = angular.copy(notes);
-        self.changeNotes = function() {
-          notes = [
-            {id: 1, label: 'Changed Note', done: false, someRandom: 424242},
-            {id: 2, label: 'Second Note', done: false},
-            {id: 3, label: 'Finished Third Note', done: true}
-          ];
-          self.notes1 = angular.copy(notes);
-          self.notes2 = angular.copy(notes);
-        };
-      }]);
-  </script>
+      };
+    }]);
+</script>
 </body>
 
 </html>
