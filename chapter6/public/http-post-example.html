@@ -14,7 +14,8 @@
   </div>
 
   <div>
-    <form name="addForm" ng-submit="mainCtrl.add()">
+    <form name="addForm"
+          ng-submit="mainCtrl.add()">
       <input type="text"
              placeholder="Label"
              ng-model="mainCtrl.newTodo.label"
@@ -23,38 +24,43 @@
              placeholder="Author"
              ng-model="mainCtrl.newTodo.author"
              required>
-      <input type="submit" value="Add" ng-disabled="addForm.$invalid">
+      <input type="submit"
+             value="Add"
+             ng-disabled="addForm.$invalid">
     </form>
   </div>
 
-  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.19/angular.js"></script>
-  <script>
-    angular.module('notesApp', [])
-      .controller('MainCtrl', ['$http', function($http) {
-        var self = this;
-        self.items = [];
-        self.newTodo = {};
-        var fetchTodos = function() {
-          return $http.get('/api/note').then(function(response) {
-            self.items = response.data;
-          }, function(errResponse) {
-            console.log('Error while fetching notes');
-          });
-        };
+<script
+  src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.19/angular.js">
+</script>
+<script>
+  angular.module('notesApp', [])
+    .controller('MainCtrl', ['$http', function($http) {
+      var self = this;
+      self.items = [];
+      self.newTodo = {};
+      var fetchTodos = function() {
+        return $http.get('/api/note').then(
+            function(response) {
+          self.items = response.data;
+        }, function(errResponse) {
+          console.log('Error while fetching notes');
+        });
+      };
 
-        fetchTodos();
+      fetchTodos();
 
-        self.add = function() {
-          console.log('Adding self' +
-              ',', self.newTodo)
-          $http.post('/api/note', self.newTodo)
-              .then(fetchTodos)
-              .then(function(response) {
-                self.newTodo = {};
-              });
-        };
+      self.add = function() {
+        console.log('Adding self' +
+            ',', self.newTodo)
+        $http.post('/api/note', self.newTodo)
+            .then(fetchTodos)
+            .then(function(response) {
+              self.newTodo = {};
+            });
+      };
 
-      }]);
-  </script>
+    }]);
+</script>
 </body>
 </html>

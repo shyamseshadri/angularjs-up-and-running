@@ -1,0 +1,31 @@
+<!-- File: chapter4/select-example.html -->
+<html ng-app="notesApp">
+<head><title>Notes App</title></head>
+<body ng-controller="MainCtrl as ctrl">
+  <div>
+    <h2>What are your favorite sports?</h2>
+    <div ng-repeat="sport in ctrl.sports">
+      <label ng-bind="sport.label"></label>
+      <div>With Binding: <input type="checkbox" ng-model="sport.selected" ng-true-value="YES" ng-false-value="NO"></div>
+      <div>Initial State : <input type="checkbox" ng-checked="sport.selected === 'YES'"></div>
+      <div>Current state: {{sport.selected}}</div>
+    </div>
+  </div>
+
+<script
+  src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.19/angular.js">
+</script>
+<script type="text/javascript">
+  angular.module('notesApp', [])
+    .controller('MainCtrl', [function() {
+      var self = this;
+       self.sports = [
+         {label: 'Basketball', selected: 'YES'},
+         {label: 'Cricket', selected: 'NO'},
+         {label: 'Soccer', selected: 'NO'},
+         {label: 'Swimming', selected: 'YES'}
+       ];
+    }]);
+</script>
+</body>
+</html>

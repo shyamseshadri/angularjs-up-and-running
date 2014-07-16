@@ -13,18 +13,20 @@
     <br/><br/>
   </div>
 
-  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.19/angular.js"></script>
-  <script>
-    angular.module('notesApp', [])
-      .controller('MainCtrl', ['$http', function($http) {
-        var self = this;
-        self.items = [];
-        $http.get('/api/note').then(function(response) {
-          self.items = response.data;
-        }, function(errResponse) {
-          console.log('Error while fetching notes');
-        });
-      }]);
-  </script>
+<script
+  src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.19/angular.js">
+</script>
+<script>
+  angular.module('notesApp', [])
+    .controller('MainCtrl', ['$http', function($http) {
+      var self = this;
+      self.items = [];
+      $http.get('/api/note').then(function(response) {
+        self.items = response.data;
+      }, function(errResponse) {
+        console.log('Error while fetching notes');
+      });
+    }]);
+</script>
 </body>
 </html>

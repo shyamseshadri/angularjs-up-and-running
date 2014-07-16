@@ -6,16 +6,17 @@ angular.module('notesApp', [])
     self.user = {};
     self.message = 'Please login';
     self.login = function() {
-      $http.post('/api/login', self.user).then(function(resp) {
+      $http.post('/api/login', self.user).then(
+        function(resp) {
          self.message = resp.data.msg;
       });
     };
   }])
   .config(['$httpProvider', function($httpProvider) {
     // Every POST data becoms jQuery style
-    $httpProvider.defaults.transformRequest.push(function(data) {
+    $httpProvider.defaults.transformRequest.push(
+        function(data) {
       var requestStr;
-      console.log('Data is ', data)
       if (data) {
         data = JSON.parse(data);
         for (var key in data) {
@@ -31,5 +32,6 @@ angular.module('notesApp', [])
     });
     // Set the content type to be FORM type for all post requests
     // This does not add it for GET requests.
-    $httpProvider.defaults.headers.post['Content-Type'] = 'application/x-www-form-urlencoded';
+    $httpProvider.defaults.headers.post['Content-Type'] =
+        'application/x-www-form-urlencoded';
   }]);

@@ -8,20 +8,22 @@
   <button ng-click="ctrl.change()">Change Values</button>
   <button ng-click="ctrl.submit()">Submit</button>
 
-  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.19/angular.js"></script>
-  <script type="text/javascript">
-    angular.module('notesApp', [])
-      .controller('MainCtrl', [function() {
-        var self = this;
-        self.change = function() {
-          self.username = 'changed';
-          self.password = 'password';
-        };
-        self.submit = function() {
-          console.log('User clicked submit with ',
-              self.username, self.password);
-        };
-      }]);
-  </script>
+<script
+  src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.19/angular.js">
+</script>
+<script type="text/javascript">
+  angular.module('notesApp', [])
+    .controller('MainCtrl', [function() {
+      var self = this;
+      self.change = function() {
+        self.username = 'changed';
+        self.password = 'password';
+      };
+      self.submit = function() {
+        console.log('User clicked submit with ',
+            self.username, self.password);
+      };
+    }]);
+</script>
 </body>
 </html>

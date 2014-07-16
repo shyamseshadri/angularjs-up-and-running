@@ -26,7 +26,10 @@ angular.module('notesApp', [])
     };
 
     self.add = function() {
-      ItemService.add({id: self.list().length + 1, label: 'Item ' + self.list().length});
+      ItemService.add({
+        id: self.list().length + 1,
+        label: 'Item ' + self.list().length
+      });
     };
   }])
   .provider('ItemService', function() {

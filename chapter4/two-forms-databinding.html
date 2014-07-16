@@ -15,20 +15,22 @@
     <input type="submit" value="Submit!!">
   </form>
 
-  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.19/angular.js"></script>
-  <script type="text/javascript">
-    angular.module('notesApp', [])
-      .controller('MainCtrl', [function() {
-        var self = this;
-        self.submit1 = function() {
-          // Create user object to send to the server
-          var user = {username: self.username, password: self.password};
-          console.log('First form submit with ', user);
-        };
-        self.submit2 = function() {
-          console.log('Second form submit with ', self.user);
-        };
-      }]);
-  </script>
+<script
+  src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.19/angular.js">
+</script>
+<script type="text/javascript">
+  angular.module('notesApp', [])
+    .controller('MainCtrl', [function() {
+      var self = this;
+      self.submit1 = function() {
+        // Create user object to send to the server
+        var user = {username: self.username, password: self.password};
+        console.log('First form submit with ', user);
+      };
+      self.submit2 = function() {
+        console.log('Second form submit with ', self.user);
+      };
+    }]);
+</script>
 </body>
 </html>

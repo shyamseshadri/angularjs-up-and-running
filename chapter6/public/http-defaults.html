@@ -8,7 +8,8 @@
 <h1>Hello HTTP Defaults!</h1>
 <div>
   <div ng-bind="loginCtrl.message"></div>
-  <form name="loginForm" ng-submit="loginCtrl.login()">
+  <form name="loginForm"
+        ng-submit="loginCtrl.login()">
     <input type="text"
            placeholder="Username"
            ng-model="loginCtrl.user.username"
@@ -17,11 +18,15 @@
            placeholder="Password"
            ng-model="loginCtrl.user.password"
            required>
-    <input type="submit" value="Login" ng-disabled="loginForm.$invalid">
+    <input type="submit"
+           value="Login"
+           ng-disabled="loginForm.$invalid">
   </form>
 </div>
 
-<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.19/angular.js"></script>
+<script
+  src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.19/angular.js">
+</script>
 <script src="http-defaults.js"></script>
 </body>
 </html>

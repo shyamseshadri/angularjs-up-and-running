@@ -3,15 +3,17 @@
 <head><title>Notes App</title></head>
 <body ng-controller="MainCtrl as ctrl">
 
-  <input type="text" ng-model="ctrl.username">
+  <input type="text" ng-model="ctrl.username"/>
   You typed {{ctrl.username}}
 
-  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.19/angular.js"></script>
-  <script type="text/javascript">
-    angular.module('notesApp', [])
-        .controller('MainCtrl', [function() {
-          this.username = 'nothing';
-        }]);
-  </script>
+<script
+  src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.19/angular.js">
+</script>
+<script type="text/javascript">
+  angular.module('notesApp', [])
+    .controller('MainCtrl', [function() {
+      this.username = 'nothing';
+    }]);
+</script>
 </body>
 </html>

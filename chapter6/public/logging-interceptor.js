@@ -34,7 +34,8 @@ angular.module('notesApp', [])
       },
       requestError: function(rejection) {
         console.log('Request error due to ', rejection);
-        // Continue to ensure that the next promise chain sees an error
+        // Continue to ensure that the next promise chain
+        // sees an error
         return $q.reject(rejection);
         // Or handled successfully?
         // return someValue;
@@ -46,13 +47,16 @@ angular.module('notesApp', [])
       },
       responseError: function(rejection) {
         console.log('Error in response ', rejection);
-        // Continue to ensure that the next promise chain sees an error
+        // Continue to ensure that the next promise chain
+        // sees an error
         // Can check auth status code here if need to
         // if (rejection.status === 403) {
         //   Show a login dialog
-        //   return a value to tell controllers it has been handled
+        //   return a value to tell controllers it has
+        // been handled
         // }
-        // Or return a rejection to continue the promise failure chain
+        // Or return a rejection to continue the
+        // promise failure chain
         return $q.reject(rejection);
       }
     };

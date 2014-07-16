@@ -23,11 +23,15 @@
              placeholder="Author"
              ng-model="mainCtrl.newTodo.author"
              required>
-      <input type="submit" value="Add" ng-disabled="addForm.$invalid">
+      <input type="submit"
+             value="Add"
+             ng-disabled="addForm.$invalid">
     </form>
   </div>
 
-  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.19/angular.js"></script>
-  <script src="logging-interceptor.js"></script>
+<script
+  src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.19/angular.js">
+</script>
+<script src="logging-interceptor.js"></script>
 </body>
 </html>
