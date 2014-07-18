@@ -8,15 +8,13 @@ angular.module('notesApp', [])
       return $http.get('/api/note').then(function(response) {
         self.items = response.data;
       }, function(errResponse) {
-        console.log('Error while fetching notes');
+        console.error('Error while fetching notes');
       });
     };
 
     fetchTodos();
 
     self.add = function() {
-      console.log('Adding self' +
-        ',', self.newTodo)
       $http.post('/api/note', self.newTodo)
         .then(fetchTodos)
         .then(function(response) {

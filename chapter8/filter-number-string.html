@@ -2,38 +2,67 @@
 <html>
 <head>
   <title>Filters in Action</title>
-  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.19/angular.js"></script>
 </head>
 <body ng-app="filtersApp">
 
-  <div ng-controller="FilterCtrl as ctrl">
-    <div>1. Amount - {{ctrl.amount}}</div>
-    <div>2. Amount - Default Currency: {{ctrl.amount | currency}}</div>
-    <div>3. Amount - INR Currency: {{ctrl.amount | currency:'INR'}}</div>
+<ul ng-controller="FilterCtrl as ctrl">
+  <li>
+    Amount - {{ctrl.amount}}
+  </li>
+  <li>
+    Amount - Default Currency: {{ctrl.amount | currency}}
+  </li>
+  <li>
+    Amount - INR Currency: {{ctrl.amount | currency:'INR'}}
+  </li>
 
-    <div>4. Amount - Number: {{ctrl.amount | number}}</div>
-    <div>5. Amount - Number with 4 decimals: {{ctrl.amount | number:4}}</div>
+  <li>
+    Amount - Number: {{ctrl.amount | number}}
+  </li>
+  <li>
+    Amount - No. with 4 decimals: {{ctrl.amount | number:4}}
+  </li>
 
-    <div>6. Name with no filters: {{ctrl.name}}</div>
-    <div>7. Name - lowercase filter: {{ctrl.name | lowercase}}</div>
-    <div>8. Name - uppercase filter: {{ctrl.name | uppercase}}</div>
+  <li>
+    Name with no filters: {{ctrl.name}}
+  </li>
+  <li>
+    Name - lowercase filter: {{ctrl.name | lowercase}}
+  </li>
+  <li>
+    Name - uppercase filter: {{ctrl.name | uppercase}}
+  </li>
 
-    <div>9. The JSON Filter: {{ctrl.obj | json}}</div>
+  <li>
+    The JSON Filter: {{ctrl.obj | json}}
+  </li>
 
-    <div>10. Timestamp: {{ctrl.startTime}}</div>
-    <div>11. Default Date filter: {{ctrl.startTime | date}}</div>
-    <div>12. Medium Date filter: {{ctrl.startTime | date:'medium'}}</div>
-    <div>13. Custom Date filter: {{ctrl.startTime | date:'M/dd, YYYY'}}</div>
-  </div>
+  <li>
+    Timestamp: {{ctrl.startTime}}
+  </li>
+  <li>
+    Default Date filter: {{ctrl.startTime | date}}
+  </li>
+  <li>
+    Medium Date filter: {{ctrl.startTime | date:'medium'}}
+  </li>
+  <li>
+    Custom Date filter: {{ctrl.startTime | date:'M/dd, YYYY'}}
+  </li>
+</ul>
 
-  <script type="text/javascript">
-    angular.module('filtersApp', [])
-      .controller('FilterCtrl', [function() {
-        this.amount = 1024;
-        this.name = 'Shyam Seshadri';
-        this.obj = {test: 'value', num: 123};
-        this.startTime = new Date().getTime();
-      }]);
-  </script>
+<script
+  src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.19/angular.js">
+</script>
+
+<script type="text/javascript">
+  angular.module('filtersApp', [])
+    .controller('FilterCtrl', [function() {
+      this.amount = 1024;
+      this.name = 'Shyam Seshadri';
+      this.obj = {test: 'value', num: 123};
+      this.startTime = new Date().getTime();
+    }]);
+</script>
 </body>
 </html>

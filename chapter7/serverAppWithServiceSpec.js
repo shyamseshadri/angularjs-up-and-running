@@ -7,13 +7,15 @@ describe('Server App Integration', function() {
   beforeEach(inject(function($controller, $httpBackend) {
 
     mockBackend = $httpBackend;
-    mockBackend.expectGET('/api/note').respond(404, {msg: 'Not Found'});
+    mockBackend.expectGET('/api/note')
+        .respond(404, {msg: 'Not Found'});
     ctrl = $controller('MainCtrl');
     // At this point, a server request will have been made
   }));
 
   it('should handle error while loading items', function() {
-    // Initially, before the server responds, the items should be empty
+    // Initially, before the server responds,
+    // the items should be empty
     expect(ctrl.items).toEqual([]);
 
     // Simulate a server response

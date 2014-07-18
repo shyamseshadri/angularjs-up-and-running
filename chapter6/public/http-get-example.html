@@ -3,14 +3,18 @@
 
 <head>
   <title>$http get example</title>
+  <style>
+    .item {
+      padding: 10px;
+    }
+  </style>
 </head>
 
 <body ng-controller="MainCtrl as mainCtrl">
   <h1>Hello Servers!</h1>
-  <div ng-repeat="todo in mainCtrl.items">
+  <div ng-repeat="todo in mainCtrl.items" class="item">
     <div><span ng-bind="todo.label"></span></div>
     <div>- by <span ng-bind="todo.author"></span></div>
-    <br/><br/>
   </div>
 
 <script
@@ -24,7 +28,7 @@
       $http.get('/api/note').then(function(response) {
         self.items = response.data;
       }, function(errResponse) {
-        console.log('Error while fetching notes');
+        console.error('Error while fetching notes');
       });
     }]);
 </script>
