@@ -15,6 +15,7 @@
               <a href="#/login">Login</a>
             </span>
             <span ng-show="mainCtrl.userService.isLoggedIn">
+              <!-- server-side route, not a client-side route -->
               <a href="/api/logout">Logout</a>
             </span>
         </div>

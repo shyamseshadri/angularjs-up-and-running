@@ -13,7 +13,7 @@ angular.module('stockMarketApp', [])
     self.stockTemplate = 'stock.html';
 
     self.getChange = function(stock) {
-      return Math.ceil((
-        (stock.price - stock.previous) / stock.previous) * 100);
+      return Math.ceil(((stock.price - stock.previous) /
+          stock.previous) * 100);
     };
   }]);

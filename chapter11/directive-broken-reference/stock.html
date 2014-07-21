@@ -1,14 +1,19 @@
 <!-- File: chapter11/directive-broken-reference/stock.html -->
 <div class="stock-dash">
-  Name: <span class="stock-name"
-              ng-bind="stockData.name">
+  Name:
+  <span class="stock-name"
+        ng-bind="stockData.name">
   </span>
-  Price: <span class="stock-price"
-               ng-bind="stockData.price | currency">
+  Price:
+  <span class="stock-price"
+        ng-bind="stockData.price | currency">
   </span>
-  Percentage Change: <span class="stock-change"
-                           ng-bind="getChange(stockData) + '%'">
+  Percentage Change:
+  <span class="stock-change"
+        ng-bind="getChange(stockData) + '%'">
   </span>
 
-  <button ng-click="changeStock()">Change Stock in Directive</button>
+  <button ng-click="changeStock()">
+    Change Stock in Directive
+  </button>
 </div>

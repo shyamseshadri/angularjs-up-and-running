@@ -2,10 +2,13 @@
 <html ng-app="notesApp">
 <body ng-controller="MainCtrl as mainCtrl">
   <h1>Hello Controllers!</h1>
-  <button ng-click="mainCtrl.open('first')">Open First</button>
-  <button ng-click="mainCtrl.open('second')">Open Second</button>
+  <button ng-click="mainCtrl.open('first')">
+    Open First
+  </button>
+  <button ng-click="mainCtrl.open('second')">
+    Open Second
+  </button>
   <div ng-switch on="mainCtrl.tab">
-
     <div ng-switch-when="first">
       <div ng-controller="SubCtrl as ctrl">
         <h3>First tab</h3>
@@ -15,7 +18,9 @@
           </li>
         </ul>
 
-        <button ng-click="ctrl.add()">Add More Items</button>
+        <button ng-click="ctrl.add()">
+          Add More Items
+        </button>
       </div>
 
     </div>
@@ -28,7 +33,9 @@
           </li>
         </ul>
 
-        <button ng-click="ctrl.add()">Add More Items</button>
+        <button ng-click="ctrl.add()">
+          Add More Items
+        </button>
       </div>
     </div>
   </div>

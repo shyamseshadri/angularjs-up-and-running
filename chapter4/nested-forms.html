@@ -6,20 +6,21 @@
 
 <body>
   <form novalidate name="myForm">
-    <input type="text"
-           class="username"
-           name="uname"
-           ng-model="ctrl.user.username"
-           required=""
-           placeholder="Username"
-           ng-minlength="4" />
-    <input type="password"
-           class="password"
-           name="pwd"
-           ng-model="ctrl.user.password"
-           placeholder="Password"
-           required="" />
-    <br/>
+    <div>
+      <input type="text"
+             class="username"
+             name="uname"
+             ng-model="ctrl.user.username"
+             required=""
+             placeholder="Username"
+             ng-minlength="4" />
+      <input type="password"
+             class="password"
+             name="pwd"
+             ng-model="ctrl.user.password"
+             placeholder="Password"
+             required="" />
+    </div>
 
     <ng-form name="profile">
       <input type="text"
@@ -43,11 +44,11 @@
     </ng-form>
 
     <span ng-show="myForm.profile.$invalid">
-        Please fill out the profile information
-      </span>
+      Please fill out the profile information
+    </span>
 
     <input type="submit"
-           value="Submit!!"
+           value="Submit"
            ng-disabled="myForm.$invalid"/>
   </form>
 

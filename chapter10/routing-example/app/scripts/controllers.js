@@ -34,11 +34,13 @@ angular.module('fifaApp')
       };
   }])
 
-  .controller('TeamDetailsCtrl', ['$location', '$routeParams', 'FifaService',
+  .controller('TeamDetailsCtrl',
+    ['$location', '$routeParams', 'FifaService',
     function($location, $routeParams, FifaService) {
       var self = this;
       self.team = {};
-      FifaService.getTeamDetails($routeParams.code).then(function(resp){
+      FifaService.getTeamDetails($routeParams.code)
+          .then(function(resp){
         self.team = resp.data;
       }, function(error){
         $location.path('/login');

@@ -7,7 +7,7 @@ angular.module('fifaApp', ['ngRoute'])
       controller: 'TeamListCtrl as teamListCtrl'
     })
     .when('/login', {
-      templateUrl: 'views/login.html',
+      templateUrl: 'views/login.html'
     })
     .when('/team/:code', {
       templateUrl: 'views/team_details.html',

@@ -17,7 +17,8 @@ angular.module('fifaApp')
       isLoggedIn: false,
 
       session: function() {
-        return $http.get('/api/session').then(function(response) {
+        return $http.get('/api/session')
+              .then(function(response) {
           service.isLoggedIn = true;
           return response;
         });

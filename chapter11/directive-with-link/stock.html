@@ -1,12 +1,15 @@
 <!-- File: chapter11/directive-with-link/stock.html -->
 <div class="stock-dash">
-  Name: <span class="stock-name"
-              ng-bind="stock.name">
+  Name:
+  <span class="stock-name"
+        ng-bind="stock.name">
   </span>
-  Price: <span class="stock-price"
-               ng-bind="stock.price | currency">
+  Price:
+  <span class="stock-price"
+        ng-bind="stock.price | currency">
   </span>
-  Percentage Change: <span class="stock-change"
-                           ng-bind="getChange(stock) + '%'">
+  Percentage Change:
+  <span class="stock-change"
+        ng-bind="getChange(stock) + '%'">
   </span>
 </div>

@@ -6,8 +6,8 @@ angular.module('stockMarketApp')
       restrict: 'AE',
       link: function($scope, $element, $attrs) {
         $scope.getChange = function(stock) {
-          return Math.ceil((
-            (stock.price - stock.previous) / stock.previous) * 100);
+          return Math.ceil(((stock.price - stock.previous) /
+              stock.previous) * 100);
         };
       }
     };

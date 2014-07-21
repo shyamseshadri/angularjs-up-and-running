@@ -2,20 +2,21 @@
 <html ng-app="notesApp">
 <head><title>Notes App</title></head>
 <body ng-controller="MainCtrl as ctrl">
-  <div>
-    <select ng-model="ctrl.selectedCountryId"
-            ng-options="c.id as c.label for c in ctrl.countries">
-    </select>
-    Selected Country ID : {{ctrl.selectedCountryId}}
-  </div>
 
-  <div>
-    <select ng-model="ctrl.selectedCountry"
-            ng-options="c.label for c in ctrl.countries">
-    </select>
+<div>
+  <select ng-model="ctrl.selectedCountryId"
+          ng-options="c.id as c.label for c in ctrl.countries">
+  </select>
+  Selected Country ID : {{ctrl.selectedCountryId}}
+</div>
 
-    Selected Country : {{ctrl.selectedCountry}}
-  </div>
+<div>
+  <select ng-model="ctrl.selectedCountry"
+          ng-options="c.label for c in ctrl.countries">
+  </select>
+
+  Selected Country : {{ctrl.selectedCountry}}
+</div>
 
 <script
   src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.19/angular.js">
