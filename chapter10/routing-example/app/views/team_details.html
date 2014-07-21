@@ -2,11 +2,11 @@
 <div class="team-details-container card">
   <div class="team-logo">
       <img title="Image Courtesy: Wikipedia"
-           ng-src="{{teamDetailsCtrl.team.logo_url}}">
+           ng-src="{{teamDetailsCtrl.team.logoUrl}}">
   </div>
   <div class="name">
       <span ng-bind="teamDetailsCtrl.team.name"></span>
-      (<span ng-bind="teamDetailsCtrl.team.fifa_code"></span>)
+      (<span ng-bind="teamDetailsCtrl.team.fifaCode"></span>)
   </div>
   <div class="detail">
     <div class="label">
@@ -21,7 +21,7 @@
       <span>FIFA Ranking</span>
     </div>
     <div class="title">
-      <span ng-bind="teamDetailsCtrl.team.fifa_ranking">
+      <span ng-bind="teamDetailsCtrl.team.fifaRanking">
       </span>
     </div>
   </div>
@@ -38,7 +38,7 @@
       <span>Head Coach</span>
     </div>
     <div class="title">
-      <span ng-bind="teamDetailsCtrl.team.head_coach"></span>
+      <span ng-bind="teamDetailsCtrl.team.headCoach"></span>
     </div>
   </div>
   <div class="detail">

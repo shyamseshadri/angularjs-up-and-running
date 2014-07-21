@@ -5,6 +5,8 @@ angular.module('fifaApp')
       var self = this;
       self.userService = UserService;
 
+      // Check if the user is logged in when the application
+      // loads
       // User Service will automatically update isLoggedIn
       // after this call finishes
       UserService.session();
@@ -27,9 +29,9 @@ angular.module('fifaApp')
 
       self.login = function() {
         UserService.login(self.user).then(function(success) {
-          $location.path('/team');
+          $location.path('/');
         }, function(error) {
-          console.error('Unable to login');
+          self.errorMessage = error.data.msg;
         })
       };
   }])

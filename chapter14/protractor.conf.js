@@ -11,8 +11,8 @@ exports.config = {
     'browserName': 'chrome'
   },
 
-  // Spec patterns are relative to the location of the spec file. They may
-  // include glob patterns.
+  // Spec patterns are relative to the location of the
+  // spec file. They may include glob patterns.
   specs: ['*Spec*.js'],
 
   // Options to be passed to Jasmine-node.

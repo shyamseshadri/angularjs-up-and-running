@@ -19,6 +19,7 @@ angular.module('fifaApp', ['ngRoute'])
                function(success) {},
                function(err) {
                   $location.path('/login');
+                  $location.replace();
                   return $q.reject(err);
              });
         }]

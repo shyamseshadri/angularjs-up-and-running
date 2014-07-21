@@ -1,6 +1,9 @@
 <!-- File: chapter10/routing-example/app/views/login.html -->
 <div class="login-container"
      ng-controller="LoginCtrl as loginCtrl">
+  <div class="alert alert-danger"
+       ng-bind="loginCtrl.errorMessage"
+       ng-show="loginCtrl.errorMessage"></div>
   <div class="card login-card">
     <div class="login-form">
       <form name="loginForm"

@@ -13,7 +13,8 @@
     Total Cost as a currency: {{ctrl.totalCost | currency}}
   </div>
   <div>
-    Total Cost in INR: {{ctrl.totalCost | currency:'INR '}}
+    <!-- Using the english pound sign -->
+    Total Cost in INR: {{ctrl.totalCost | currency:'&#163 '}}
   </div>
   <div>
     Shouting the name: {{ctrl.name | uppercase}}
