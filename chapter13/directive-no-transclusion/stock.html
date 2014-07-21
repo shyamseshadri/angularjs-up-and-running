@@ -1,12 +1,15 @@
 <!-- File: chapter13/directive-no-transclusion/stock.html -->
 <div class="stock-dash">
-  Name: <span class="stock-name"
-              ng-bind="stockData.name">
+  Name:
+  <span class="stock-name"
+        ng-bind="stockData.name">
   </span>
-  Price: <span class="stock-price"
-               ng-bind="stockData.price | currency">
+  Price:
+  <span class="stock-price"
+        ng-bind="stockData.price | currency">
   </span>
-  Percentage Change: <span class="stock-change"
-                           ng-bind="getChange(stockData) + '%'">
+  Percentage Change
+  <span class="stock-change"
+        ng-bind="getChange(stockData) + '%'">
   </span>
 </div>

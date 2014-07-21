@@ -12,11 +12,16 @@ describe('Stock Widget Directive Behavior', function() {
     rootScope = $rootScope;
   }));
 
-  it('should have functions and data on scope correctly', function() {
+  it('should have functions and data on scope correctly',
+      function() {
     // Step 2
     var scope = rootScope.$new();
     var scopeClickCalled = '';
-    scope.myStock = {name: 'Best Stock', price: 100, previous: 200};
+    scope.myStock = {
+      name: 'Best Stock',
+      price: 100,
+      previous: 200
+    };
     scope.title = 'the best';
     scope.userClick = function(stockPrice,
                                stockPrevious,
@@ -36,7 +41,8 @@ describe('Stock Widget Directive Behavior', function() {
         '<div stock-widget' +
         ' stock-data="myStock"' +
         ' stock-title="This is {{title}}"' +
-        ' when-select="userClick(stockPrice, stockPrevious, stockName)">' +
+        ' when-select="userClick(stockPrice, ' +
+            'stockPrevious, stockName)">' +
         '</div>'
     )(scope);
 
@@ -47,9 +53,10 @@ describe('Stock Widget Directive Behavior', function() {
     // Step 6
     var compiledElementScope = element.isolateScope();
 
-    expect(compiledElementScope.stockData).toEqual(scope.myStock);
-    expect(compiledElementScope.getChange(compiledElementScope.stockData))
-        .toEqual(-50);
+    expect(compiledElementScope.stockData)
+        .toEqual(scope.myStock);
+    expect(compiledElementScope.getChange(
+      compiledElementScope.stockData)).toEqual(-50);
 
 
     // Step 7

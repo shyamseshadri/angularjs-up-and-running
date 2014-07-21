@@ -1,6 +1,6 @@
 // File: chapter13/directive-slider/noui-slider.js
 angular.module('sliderApp')
-  .directive('nouiSlider', [function() {
+  .directive('noUiSlider', [function() {
     return {
       restrict: 'E',
       require: 'ngModel',

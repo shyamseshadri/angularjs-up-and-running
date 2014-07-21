@@ -2,10 +2,12 @@
 <div class="stock-dash">
   <span ng-transclude></span>
 
-  Price: <span class="stock-price"
-               ng-bind="stockData.price | currency">
+  Price:
+  <span class="stock-price"
+        ng-bind="stockData.price | currency">
   </span>
-  Percentage Change: <span class="stock-change"
-                           ng-bind="getChange(stockData) + '%'">
+  Percentage Change:
+  <span class="stock-change"
+        ng-bind="getChange(stockData) + '%'">
   </span>
 </div>
