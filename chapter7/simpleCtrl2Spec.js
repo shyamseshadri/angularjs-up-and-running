@@ -3,7 +3,7 @@
 describe('SimpleCtrl2', function() {
   beforeEach(module('simpleCtrl2App'));
 
-  var ctrl, $loc, $w;
+  var ctrl, $loc;
   beforeEach(inject(function($controller, $location) {
     ctrl = $controller('SimpleCtrl2');
     $loc = $location;
