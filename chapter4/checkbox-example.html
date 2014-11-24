@@ -8,6 +8,13 @@
       <label ng-bind="sport.label"></label>
       <div>
         With Binding:
+        <!--In AngularJS 1.3.x, the ng-true-value or ng-false-value will only accept constant expressions.-->
+        <!--Which means the value of ng-true-value should be "'YES'" and the value of ng-false-value should be "'NO'". -->
+        <!--Do notice the single quotes wraped the value -->
+        <!--<input type="checkbox"-->
+               <!--ng-model="sport.selected"-->
+               <!--ng-true-value="'YES'"-->
+               <!--ng-false-value="'NO'">-->
         <input type="checkbox"
                ng-model="sport.selected"
                ng-true-value="YES"
