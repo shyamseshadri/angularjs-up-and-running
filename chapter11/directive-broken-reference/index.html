@@ -6,10 +6,17 @@
 <body ng-app="stockMarketApp">
 
   <div ng-controller="MainCtrl as mainCtrl">
-    <h3>List of Stocks</h3>
+    <h3>List of Stocks Using Repeaters</h3>
+
     <div ng-repeat="s in mainCtrl.stocks">
       <div stock-widget stock-data="s">
       </div>
+    </div>
+
+    <h3>List of Stocks Repeating Manually</h3>
+    <div stock-widget stock-data="mainCtrl.stocks[0]">
+    </div>
+    <div stock-widget stock-data="mainCtrl.stocks[1]">
     </div>
 
     <button ng-click="mainCtrl.changeAllStocks()">
@@ -20,7 +27,7 @@
     </button>
   </div>
 
-  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.19/angular.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.11/angular.js"></script>
   <script src="app.js"></script>
   <script src="directive.js"></script>
 </body>

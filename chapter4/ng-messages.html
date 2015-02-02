@@ -1,0 +1,71 @@
+<!-- File: chapter4/ng-messages.html -->
+<html ng-app="notesApp">
+<head><title>Notes App</title></head>
+<body ng-controller="MainCtrl as ctrl">
+
+  <form ng-submit="ctrl.submit1()" name="simpleForm">
+    <input type="email"
+           name="uname"
+           ng-model="ctrl.user1.username"
+           required
+           ng-minlength="6">
+    <div ng-messages="simpleForm.uname.$error"
+         ng-messages-include="error-messages"></div>
+    <input type="password"
+           name="pwd"
+           ng-model="ctrl.user1.password"
+           required>
+    <div ng-messages="simpleForm.pwd.$error"
+         ng-messages-include="error-messages"></div>
+    <input type="submit"
+           value="Submit"
+           ng-disabled="simpleForm.$invalid">
+  </form>
+
+  <form ng-submit="ctrl.submit2()" name="overriddenForm">
+    <input type="email"
+           name="uname"
+           ng-model="ctrl.user2.username"
+           required
+           ng-minlength="6">
+    <div ng-messages="overriddenForm.uname.$error"
+         ng-messages-include="error-messages">
+      <div ng-message="required">Please enter a username</div>
+    </div>
+    <input type="password"
+           name="pwd"
+           ng-model="ctrl.user2.password"
+           required>
+    <div ng-messages="overriddenForm.pwd.$error">
+      <div ng-message="required">Please enter a password</div>
+    </div>
+    <input type="submit"
+           value="Submit"
+           ng-disabled="overriddenForm.$invalid">
+  </form>
+
+<script
+  src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.11/angular.js">
+</script>
+<script src=
+  "https://ajax.googleapis.com/ajax/libs/angularjs/1.3.11/angular-messages.js">
+</script>
+<script type="text/ng-template" id="error-messages">
+  <div ng-message="required">This field is mandatory</div>
+  <div ng-message="minlength">Minimum length condition not met</div>
+  <div ng-message="email">Please enter a valid email address</div>
+</script>
+<script type="text/javascript">
+  angular.module('notesApp', ['ngMessages'])
+    .controller('MainCtrl', [function() {
+      var self = this;
+      self.submit1 = function() {
+        console.log('User clicked submit with ', self.user1);
+      };
+      self.submit2 = function() {
+        console.log('User clicked submit with ', self.user2);
+      };
+    }]);
+</script>
+</body>
+</html>

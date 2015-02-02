@@ -6,19 +6,9 @@ angular.module('stockMarketApp')
       restrict: 'A',
       require: 'ngModel',
       link: function($scope, $element, $attrs, ngModelCtrl) {
-        // Handle DOM update --> Model update
-        ngModelCtrl.$parsers.unshift(function(value) {
-          var valid = zipCodeRegex.test(value);
-          ngModelCtrl.$setValidity('validZip', valid);
-          return valid ? value : undefined;
-        });
-
-        // Handle Model Update --> DOM
-        ngModelCtrl.$formatters.unshift(function(value) {
-          ngModelCtrl.$setValidity('validZip',
-            zipCodeRegex.test(value));
-          return value;
-        });
+        ngModelCtrl.$validators.zip = function(value) {
+          return zipCodeRegex.test(value);
+        };
       }
     };
   }]);

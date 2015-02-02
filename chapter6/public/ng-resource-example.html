@@ -1,8 +1,8 @@
-<!-- File: chapter6/public/http-post-example.html -->
+<!-- File: chapter6/public/ng-resource-example.html -->
 <html ng-app="notesApp">
 
 <head>
-  <title>HTTP Post Example</title>
+  <title>ngResource Example</title>
   <style>
     .item {
       padding: 10px;
@@ -16,6 +16,7 @@
        class="item">
     <div><span ng-bind="todo.label"></span></div>
     <div>- by <span ng-bind="todo.author"></span></div>
+    <div><button ng-click="mainCtrl.done(todo)">DONE</button></div>
   </div>
 
   <div>
@@ -38,31 +39,44 @@
 <script
   src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.11/angular.js">
 </script>
+<script src=
+  "https://ajax.googleapis.com/ajax/libs/angularjs/1.3.11/angular-resource.js">
+</script>
 <script>
-  angular.module('notesApp', [])
-    .controller('MainCtrl', ['$http', function($http) {
+  angular.module('notesApp', ['ngResource'])
+    .controller('MainCtrl', ['Notes', function(Notes) {
       var self = this;
       self.items = [];
       self.newTodo = {};
       var fetchTodos = function() {
-        return $http.get('/api/note').then(
-            function(response) {
-          self.items = response.data;
-        }, function(errResponse) {
-          console.error('Error while fetching notes');
-        });
+        self.items = Notes.query();
       };
 
       fetchTodos();
 
+      self.done = function(note) {
+        Notes.markAsDone(note, function(notes) {
+          self.items = notes;
+        });
+      };
+
       self.add = function() {
-        $http.post('/api/note', self.newTodo)
+        Notes.save(self.newTodo).$promise
             .then(fetchTodos)
-            .then(function(response) {
+            .then(function() {
               self.newTodo = {};
             });
       };
 
+    }])
+    .factory('Notes', ['$resource', function($resource) {
+      return $resource('/api/note/:id', {id: '@id'}, {
+        markAsDone: {
+          url: '/api/note/:id/done',
+          method: 'POST',
+          isArray: true
+        }
+      });
     }]);
 </script>
 </body>

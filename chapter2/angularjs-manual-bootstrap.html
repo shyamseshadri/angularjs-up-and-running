@@ -1,0 +1,19 @@
+<!-- File: chapter2/angularjs-manual-bootstrap.html -->
+<!DOCTYPE html>
+<html>
+
+<body>
+<h1>Hello {{1 + 2}}rd time AngularJS</h1>
+
+<script
+  src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.11/angular.js">
+</script>
+<script type="text/javascript">
+  angular.module('notesApp', []);
+  angular.element(document).ready(function() {
+    angular.bootstrap(document, ['notesApp']);
+  });
+</script>
+</body>
+
+</html>

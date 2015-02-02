@@ -34,6 +34,20 @@ router.post('/note', function(req, res) {
   res.send(note);
 });
 
+
+router.post('/note/:id/done', function(req, res) {
+  var noteId = req.params.id;
+  var note = null;
+  for (var i = 0; i < notes.length; i++) {
+    if (notes[i].id == req.params.id) {
+      note = notes[i];
+      break;
+    }
+  }
+  note.label = 'Done - ' + note.label;
+  res.send(notes);
+});
+
 router.get('/note/:id', function(req, res) {
   for (var i = 0; i < notes.length; i++) {
     if (notes[i].id == req.params.id) {
