@@ -12,7 +12,7 @@
 
 <div>
   <select ng-model="ctrl.selectedCountry"
-          ng-options="c.label for c in ctrl.countries">
+          ng-options="c.label as c.label for c in ctrl.countries">
   </select>
 
   Selected Country : {{ctrl.selectedCountry}}
@@ -30,7 +30,7 @@
         {label: 'Other', id: 3}
       ];
       this.selectedCountryId = 2;
-      this.selectedCountry = this.countries[1];
+      this.selectedCountry = this.countries[1]['label'];
     }]);
 </script>
 </body>
