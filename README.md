@@ -3,7 +3,7 @@ angularjs-up-and-running
 
 All the source code for the [AngularJS Up &amp; Running Book for O'Reilly](http://shop.oreilly.com/product/0636920033486.do)
 
-*Steps To Server Files Locally*
+*Steps to serve files locally*
 
 Using NodeJS
 ```
@@ -15,8 +15,8 @@ npm install --save http-server
 node node_modules/http-server/bin/http-server
 ```
 
-connect browser to http://localhost:8080
-example directory is served
+Connect browser to http://localhost:8080
+Example directory is served.
 
 Using Python
 
