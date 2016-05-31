@@ -8,7 +8,7 @@
   <div ng-repeat="note in ctrl.notes1">
     {{note.$$hashKey}}
     <span class="label"> {{note.label}}</span>
-    <span class="author" ng-bind="note.done"></span>
+    <span class="status" ng-bind="note.done"></span>
   </div>
 
   <br/>
@@ -16,7 +16,7 @@
   <div ng-repeat="note in ctrl.notes2 track by note.id">
     {{note.$$hashKey}}
     <span class="label"> {{note.label}}</span>
-    <span class="author" ng-bind="note.done"></span>
+    <span class="status" ng-bind="note.done"></span>
   </div>
 
 <script
